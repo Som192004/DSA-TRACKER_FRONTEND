@@ -1,11 +1,12 @@
-import { FaRegCircleUser } from "react-icons/fa6";
+
 import {DSACard , Container} from "./index.js"
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import  {Oval}  from 'react-loader-spinner';
+import FancyLoader from "./FancyLoader.jsx"
 import UnAuthorized from "../Pages/UnAuthorized.jsx";
+import UserInfo from "./UserInfo.jsx";
 const Profile = () => {
     const [data , setData] = useState();
     const [loading, setLoading] = useState(false);
@@ -113,49 +114,52 @@ const Profile = () => {
     return <>
         {
             loading ? 
-            <div className="justify-self-center m-1"><Oval type="Oval" color="#000000" dark:color="#FFFFFF" height="50" width="100" /></div> : 
+            // <div className="justify-self-center m-1"><Oval type="Oval" color="#000000" dark:color="#FFFFFF" height="50" width="100" /></div>
+            <FancyLoader />
+            : 
             <div className="grid grid-cols-[25%_75%] h-fit">
             {/* UserPersonal Info */}
-            <div className="border-2 rounded-md ml-1 dark:bg-black">
+            {/* <div className="border-2 rounded-md ml-1 dark:bg-black">
                 <div className="justify-self-center mb-2 mt-1 dark:bg-white">
                     <FaRegCircleUser size="4em"/>
                 </div>
-                    <p className="mb-3 ml-1 dark:text-white text-xl justify-self-center">Username</p>
-                    <p className="ml-1 dark:text-white">{data?.user?.username}</p>
+                    <p className="mb-3 ml-1 dark:text-white text-2xl justify-self-center">Username</p>
+                    <p className="ml-1 dark:text-white text-2xl">{data?.user?.username}</p>
                     <hr/>
-                    <p className="mb-3 ml-1 dark:text-white text-xl justify-self-center">Name</p>
-                    <p className="ml-1 dark:text-white">{data?.user?.fullname}</p>
+                    <p className="mb-3 ml-1 dark:text-white text-2xl justify-self-center">Name</p>
+                    <p className="ml-1 dark:text-white text-2xl">{data?.user?.fullname}</p>
                     <hr/>
-                <div className="mb-3 ml-1 mt-1 dark:text-white text-xl justify-self-center">
+                <div className="mb-3 ml-1 mt-1 dark:text-white text-2xl justify-self-center">
                     Email
                 </div>
-                    <a href={`mailto:${data?.user?.email}`} target="_blank" className="ml-1 dark:text-white">{data?.user?.email}</a>
+                    <a href={`mailto:${data?.user?.email}`} target="_blank" className="ml-1 dark:text-white text-2xl">{data?.user?.email}</a>
                     <hr />
-                <div className="mb-3 ml-1 dark:text-white text-xl justify-self-center">
+                <div className="mb-3 ml-1 dark:text-white text-2xl justify-self-center">
                     CollegeName
                 </div>
-                    <p className="ml-1 dark:text-white">{data?.user?.collegeName}</p>
+                    <p className="ml-1 dark:text-white text-2xl">{data?.user?.collegeName}</p>
                     <hr />
-                <div className="mb-2 ml-1 dark:text-white text-xl justify-self-center">
-                    LeetCode Profile
+                <div className="mb-2 ml-1 dark:text-white text-2xl justify-self-center">
+                    GFG Profile
                 </div>
                 <div className="justify-self-center">
-                    <a href={`https://leetcode.com/u/${data?.user?.leetCodeId}/`} target="_blank"
+                    <a href={`https://www.geeksforgeeks.org/user/${data?.user?.leetCodeId}/`} target="_blank"
                     className="ml-1 dark:text-white">
-                        <img width="96" height="96" src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/96/external-level-up-your-coding-skills-and-quickly-land-a-job-logo-color-tal-revivo.png" alt="external-level-up-your-coding-skills-and-quickly-land-a-job-logo-color-tal-revivo"/>
+                        <img width="96" height="96" src="https://img.icons8.com/color/48/GeeksforGeeks.png" alt="GeeksforGeeks"/>
                     </a>
                 </div>
 
-            </div>
+            </div> */}
+            <UserInfo data={data}/>
 
             {/* UserProgress */}
             <div className="grid border-2 rounded-md mr-1 dark:bg-black">
-                <div className="pl-1 text-2xl mb-1 dark:text-white">
+                <div className="pl-1 text-2xl mb-1 dark:text-white mt-2">
                     <h1>Total Problems Solved: {data?.totalProblems}</h1>
                 </div>
                 <hr />
                 <div className="pl-1 text-2xl ">
-                    <h1 className="mb-1 dark:text-white">Topics Covered on (DSA TRACKER)</h1>
+                    <h1 className="mb-1 dark:text-white mt-1">Topics Covered on (DSA TRACKER)</h1>
                         <div className='flex flex-wrap'>
                             {dsaTopics?.map((dsaTopic) => (
                                     <div key={dsaTopic.id} className='p-2 w-1/4 hover:scale-110 transition duration-300 cursor-pointer'>

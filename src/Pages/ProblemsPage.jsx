@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import { Container } from "../components";
+import { Container} from "../components/index.js";
 import {DSACard} from "../components/index.js";
 import axios from "axios"
 import {useSelector} from 'react-redux'
 import { Outlet } from "react-router-dom";
 import UnAuthorized from "./UnAuthorized";
-import { Oval } from "react-loader-spinner";
+import {FancyLoader} from "../components/index.js";
 const ProblemsPage = () => {
     const dsaTopics = [
         {
@@ -104,7 +104,7 @@ const ProblemsPage = () => {
 
         {
             if(loading){
-                return <div className="justify-self-center m-1"><Oval type="Oval" color="#000000" dark:color="#FFFFFF" height="50" width="100" /></div>
+                return <FancyLoader />
             }
         }
     return <>

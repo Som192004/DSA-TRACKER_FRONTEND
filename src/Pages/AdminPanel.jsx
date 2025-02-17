@@ -2,6 +2,11 @@ import { useEffect, useState } from "react";
 import {AdminTopicList, Button, Input} from "../components/index.js"
 import axios from "axios";
 
+import UnAuthorized from "./UnAuthorized.jsx";
+
+//replace the leetCodeId with the gfg Id . . . 
+
+
 const AdminPanel = () => {
     const [allTopicsProblems , setallTopicsProblems] = useState();
     const role = localStorage.getItem("role")
@@ -19,6 +24,9 @@ const AdminPanel = () => {
       if(currTopic.trim() === ""){
         setMsg("Topic name is required")
         setMsgOnBtn("Add New Topic")
+        setTimeout(() => {
+          setMsg("")
+        }, 3000);
       }
       else{
         axios
@@ -28,11 +36,18 @@ const AdminPanel = () => {
             setallTopicsProblems([...allTopicsProblems , response.data.data])
             setMsg("topic added successfully")
             setMsgOnBtn("Add New Topic")
+            setTimeout(() => {
+              setMsg("")
+            }, 3000);
+            
           })
           .catch((error) => {
             console.error("Error fetching data:", error.response.data)
             setMsg("either topic is already exists or internal server error")
             setMsgOnBtn("Add New Topic")
+            setTimeout(() => {
+              setMsg("")
+            }, 3000);
           });
       }
 
@@ -73,9 +88,9 @@ const AdminPanel = () => {
 
           </div> 
           : 
-          <div>
-            You are not Authorized
-          </div>
+          <UnAuthorized>
+
+          </UnAuthorized>
         }
         
     </>

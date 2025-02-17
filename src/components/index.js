@@ -12,6 +12,7 @@ import Input from "./Input"
 import DSACard from "./DSACard"
 import TopicList from "./TopicList"
 import AdminTopicList from "./AdminTopicList"
+import FancyLoader from "./FancyLoader"
 export {
     Protected,
     Header,
@@ -26,5 +27,6 @@ export {
     Input,
     DSACard,
     TopicList,
-    AdminTopicList
+    AdminTopicList,
+    FancyLoader
 }

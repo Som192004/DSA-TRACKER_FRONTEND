@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import {useSelector} from 'react-redux'
 import  {Oval}  from 'react-loader-spinner';
+import {FancyLoader} from "../components/index.js";
 const ProblemPage = () => {
     const {topic} = useParams();
     const authData = useSelector(state => state.auth.userData)
@@ -21,9 +22,16 @@ const ProblemPage = () => {
             console.error("Error fetching data:", error)
           });
     } , [])
+    {
+      if(data && data.length == 0){
+        return <h1 className="text-center text-3xl dark:bg-black dark:text-white p-6">
+          No Problems added for this topic
+        </h1>
+      }
+    }
     return <>
         {
-          data ? <TopicList data={data}/> : <div className="justify-self-center m-1"><Oval type="Oval" color="#000000" dark:color="#FFFFFF" height="50" width="100" /></div>
+          data ? <TopicList data={data}/> : <FancyLoader />
         }
         
     </>

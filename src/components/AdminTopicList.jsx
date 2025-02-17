@@ -2,7 +2,7 @@ import { useState } from "react";
 import Button from "./Header/Button";
 import axios from "axios";
 import Input from "./Input";
-
+import { FaEdit, FaSave, FaTimes ,FaTrash} from "react-icons/fa";
 const AdminTopicList = ({name , problems}) => {
     const [problemName , setProblemName] = useState() ;
     const [difficulty , setDifficulty] = useState() ;
@@ -53,7 +53,7 @@ const AdminTopicList = ({name , problems}) => {
     }
     
     const save = () => {
-        setMsgOnBtn("Processing . . . ")
+        setMsgOnBtn(". . .")
         if(!problemName || !difficulty || !name || !link || !problemNumber){
             setMsg("All Fields are required")
             setMsgOnBtn("Save")
@@ -77,6 +77,7 @@ const AdminTopicList = ({name , problems}) => {
             setMsgOnBtn("Saved")
             setMsg("")
             setShowInput(!showInput)
+            setMsgOnBtn("Save")
             
         })
           .catch((error) => {
@@ -122,13 +123,13 @@ const AdminTopicList = ({name , problems}) => {
                         <table className="table-auto w-5/6 border-collapse border-2 border-black dark:border-white dark:bg-black">
                             <thead>
                                 <tr>
-                                    <th className="border-2 border-black dark:border-white dark:text-white col-span-1">problemNumber</th>
-                                    <th className="border-2 border-black dark:border-white dark:text-white col-span-2">name</th>
-                                    <th className="border-2 border-black dark:border-white dark:text-white">difficulty</th>
-                                    <th className="border-2 border-black dark:border-white dark:text-white">topicName</th>
-                                    <th className="border-2 border-black dark:border-white dark:text-white">link</th>
-                                    <th className="border-2 border-black dark:border-white dark:text-white">Edit</th>
-                                    <th className="border-2 border-black dark:border-white dark:text-white">Delete</th>
+                                    <th className="border-2 border-black dark:border-white dark:text-white col-span-1">ProblemNumber</th>
+                                    <th className="border-2 border-black dark:border-white dark:text-white col-span-2">Name</th>
+                                    <th className="border-2 border-black dark:border-white dark:text-white">Difficulty</th>
+                                    <th className="border-2 border-black dark:border-white dark:text-white">TopicName</th>
+                                    <th className="border-2 border-black dark:border-white dark:text-white">Link</th>
+                                    <th className="border-2 border-black dark:border-white dark:text-white"><FaEdit size="2.0em" className="justify-self-center"/></th>
+                                    <th className="border-2 border-black dark:border-white dark:text-white"><FaTrash size="1.8em" className="justify-self-center"/></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -192,14 +193,14 @@ const AdminTopicList = ({name , problems}) => {
 
                                     <td className="border-2 border-black dark:border-white dark:text-white">
                                         {editingProblemId === problem._id ? (
-                                            <div className="justify-self-center p-1"><Button onClick={saveChanges}>Save</Button></div>
+                                            <div className="justify-self-center p-1"><Button onClick={saveChanges}><FaSave size="1.5em"/></Button></div>
                                         ) : (
-                                            <div className="justify-self-center"><Button onClick={() => editProblem(problem)}>Edit</Button></div>
+                                            <div className="justify-self-center"><Button onClick={() => editProblem(problem)}><FaEdit size="1.5em" className="justify-self-center"/></Button></div>
                                         )}
                                     </td>
 
                                     <td className="border-2 border-black dark:border-white dark:text-white">
-                                        <div className="justify-self-center p-1"><Button onClick={() => deleteProblem(problem._id)}>Delete</Button></div>
+                                        <div className="justify-self-center p-1"><Button onClick={() => deleteProblem(problem._id)}><FaTrash size="1.5em" className="justify-self-center"/></Button></div>
                                     </td>
                                 </tr>
                             ))}
