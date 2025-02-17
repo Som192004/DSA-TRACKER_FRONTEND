@@ -26,7 +26,7 @@ const AdminTopicList = ({name , problems}) => {
 
     const saveChanges = () => {
         const accessToken = localStorage.getItem("accessToken")
-        axios.patch(`http://localhost:8000/problems/edit-problem/${editingProblemId}`, {editedProblem , Authorization : accessToken}  )
+        axios.patch(`https://dsa-tracker-backend-oo1y.onrender.com/problems/edit-problem/${editingProblemId}`, {editedProblem , Authorization : accessToken}  )
             .then((response) => {
                 console.log("Problem updated:", response.data.data);
     
@@ -68,7 +68,7 @@ const AdminTopicList = ({name , problems}) => {
         //temporary I am accessing the accessToken directly from the localStorage
         const accessToken = localStorage.getItem("accessToken")
         axios
-          .post("http://localhost:8000/problems/add-problem" , {Authorization : accessToken , 
+          .post("https://dsa-tracker-backend-oo1y.onrender.com/problems/add-problem" , {Authorization : accessToken , 
         name : problemName , difficulty , topicName : name , link , problemNumber})
           .then((response) => {
             console.log("response-data: " , response.data.data)
@@ -91,7 +91,7 @@ const AdminTopicList = ({name , problems}) => {
     const deleteProblem = (problemId) => {
         const accessToken = localStorage.getItem("accessToken")
         console.log(accessToken)
-        axios.delete(`http://localhost:8000/problems/delete-problem/${problemId}` , {headers: { Authorization: accessToken },})
+        axios.delete(`https://dsa-tracker-backend-oo1y.onrender.com/problems/delete-problem/${problemId}` , {headers: { Authorization: accessToken },})
           .then((response) => {
             console.log("response-data: " , response.data.data)
             setProblemList(problems.filter(problem => problem._id !== problemId));

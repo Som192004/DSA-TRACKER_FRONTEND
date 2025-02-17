@@ -35,7 +35,7 @@ const UserInfo = ({ data }) => {
     const handleSaveClick = async () => {
         try {
             const accessToken = localStorage.getItem("accessToken")
-            const response = await axios.patch("http://localhost:8000/users/update-profile", { username : userData.username , fullname : userData.fullname , email : userData.email , collegeName : userData.collegeName , leetCodeId : userData.leetCodeId , Authorization: `${accessToken}`});
+            const response = await axios.patch("https://dsa-tracker-backend-oo1y.onrender.com/users/update-profile", { username : userData.username , fullname : userData.fullname , email : userData.email , collegeName : userData.collegeName , leetCodeId : userData.leetCodeId , Authorization: `${accessToken}`});
             console.log("Updated successfully:", response.data);
             setEditMode(false);
             setErrorDialog("UserInfo Updated Successfully");

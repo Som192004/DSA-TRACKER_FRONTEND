@@ -94,7 +94,7 @@ const Profile = () => {
         setLoading(true);
         const accessToken = localStorage.getItem("accessToken")
         axios
-          .post("http://localhost:8000/users/profile" , {topicNames , 
+          .post("https://dsa-tracker-backend-oo1y.onrender.com/users/profile" , {topicNames , 
             Authorization: `${accessToken}`} )
           .then((response) => {
             console.log("response-data: " , response.data.data)

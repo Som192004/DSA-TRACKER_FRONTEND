@@ -85,7 +85,7 @@ const ProblemsPage = () => {
     const [loading , setLoading] = useState(true)
     useEffect(() => {
         axios
-          .post("http://localhost:8000/problems/problem-numbers" , {
+          .post("https://dsa-tracker-backend-oo1y.onrender.com/problems/problem-numbers" , {
             dsaTopics , Authorization : accessToken })
           .then((response) => {
             console.log("response-data: " , response.data.data)

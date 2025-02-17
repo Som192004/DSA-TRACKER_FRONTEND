@@ -196,7 +196,7 @@ function Signup() {
     setmsgOnBtn(true);
 
     try {
-      const response = await axios.post("http://localhost:8000/users/register", {
+      const response = await axios.post("https://dsa-tracker-backend-oo1y.onrender.com/users/register", {
         username, email, fullname, password, collegeName, leetCodeId
       });
 

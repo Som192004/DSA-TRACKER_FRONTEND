@@ -30,7 +30,7 @@ const AdminPanel = () => {
       }
       else{
         axios
-          .post("http://localhost:8000/topic/add-topic" , {Authorization : accessToken , topicName : currTopic})
+          .post("https://dsa-tracker-backend-oo1y.onrender.com/topic/add-topic" , {Authorization : accessToken , topicName : currTopic})
           .then((response) => {
             console.log("response-data: " , response.data.data)
             setallTopicsProblems([...allTopicsProblems , response.data.data])
@@ -55,7 +55,7 @@ const AdminPanel = () => {
 
     useEffect(() => {
         axios
-          .post("http://localhost:8000/problems/admin/get-all-problems" , {Authorization : accessToken , topicNames})
+          .post("https://dsa-tracker-backend-oo1y.onrender.com/problems/admin/get-all-problems" , {Authorization : accessToken , topicNames})
           .then((response) => {
             console.log("response-data: " , response.data.data)
             setallTopicsProblems(response.data.data)

@@ -13,7 +13,7 @@ const ProblemPage = () => {
     useEffect(() => {
       const topicName = topic
         axios
-          .post(`http://localhost:8000/problems/get-problems-list/${topicName}` , {Authorization : accessToken })
+          .post(`https://dsa-tracker-backend-oo1y.onrender.com/problems/get-problems-list/${topicName}` , {Authorization : accessToken })
           .then((response) => {
             console.log("response-data: " , response.data.data)
             setData(response.data.data)
