@@ -69,6 +69,12 @@ const router = createBrowserRouter([
                 <AuthLayout authentication={true}>
                     <AdminPanel />
                 </AuthLayout>)
+        },
+        {
+            path:"/blog" ,
+            element : (
+                <BlogPage />
+            )
         }
     ],
 },

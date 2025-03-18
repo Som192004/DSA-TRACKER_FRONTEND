@@ -108,7 +108,8 @@ function Header() {
     { name: 'Problems', slug: '/problems', status: true },
     { name: "Login", slug: "/login", status: !authStatus },
     { name: "Signup", slug: "/signup", status: !authStatus },
-    { name: "Profile", slug: "/profile", status: authStatus }
+    { name: "Profile", slug: "/profile", status: authStatus },
+    {name : "Blog" , slug : "/blog" , status: !authStatus}
   ];
 
   useEffect(() => {
