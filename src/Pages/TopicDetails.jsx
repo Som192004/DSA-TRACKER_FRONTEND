@@ -126,7 +126,6 @@ export default function TopicDetails() {
         <button onClick={() => openEditModal(blog)} className="absolute top-3 right-12 bg-yellow-500 p-2 rounded-full hover:bg-yellow-600">
           <Edit className="text-white w-5 h-5" />
         </button>
-        &&
         <button onClick={() => handleDelete(blog._id)} className="absolute top-3 right-3 bg-red-500 p-2 rounded-full hover:bg-red-600">
           <Trash2 className="text-white w-5 h-5" />
         </button>
