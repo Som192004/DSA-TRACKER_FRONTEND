@@ -129,7 +129,7 @@ export default function TopicDetails() {
         <button onClick={() => handleDelete(blog._id)} className="absolute top-3 right-3 bg-red-500 p-2 rounded-full hover:bg-red-600">
           <Trash2 className="text-white w-5 h-5" />
         </button>
-      </div>
+        </div>
       }
 
       {/* Blog Name */}

@@ -145,11 +145,12 @@ export default function BlogCards() {
               {
                 role === 'Admin' && <button onClick={() => openEditModal(topic)} className="absolute top-3 right-12 bg-yellow-500 p-2 rounded-full hover:bg-yellow-600">
                 <Edit className="dark:text-white w-5 h-5" />
-              </button> &&
-              <button onClick={() => handleDelete(topic._id)} className="absolute top-3 right-3 bg-red-500 p-2 rounded-full hover:bg-red-600">
-              <Trash2 className="dark:text-white w-5 h-5" />
-            </button>
-
+              </button>
+              }
+              {
+                role === 'Admin' && <button onClick={() => handleDelete(topic._id)} className="absolute top-3 right-3 bg-red-500 p-2 rounded-full hover:bg-red-600">
+                <Trash2 className="dark:text-white w-5 h-5" />
+              </button>
               }
 
               <h2 className="text-xl font-semibold">{topic.title}</h2>
