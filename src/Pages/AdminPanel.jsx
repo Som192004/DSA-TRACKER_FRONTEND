@@ -4,8 +4,6 @@ import axios from "axios";
 
 import UnAuthorized from "./UnAuthorized.jsx";
 
-//replace the leetCodeId with the gfg Id . . . 
-
 
 const AdminPanel = () => {
     const [allTopicsProblems , setallTopicsProblems] = useState();

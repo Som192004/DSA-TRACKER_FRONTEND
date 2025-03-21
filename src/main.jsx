@@ -13,7 +13,9 @@ import ProblemPage from "./Pages/ProblemPage"
 import ProblemsPage from './Pages/ProblemsPage'
 import { Provider } from 'react-redux'
 import AdminPanel from './Pages/AdminPanel'
-
+import BlogDashBoard from "./Pages/BlogDashboard"
+import TopicDetails from "./Pages/TopicDetails"
+import BlogDetail from './Pages/BlogDetail'
 const router = createBrowserRouter([
   {
     path: "/",
@@ -71,11 +73,25 @@ const router = createBrowserRouter([
                 </AuthLayout>)
         },
         {
-            path:"/blog" ,
+            path : "/blog" ,
             element : (
-                <BlogPage />
+                    <BlogDashBoard />
+            )  
+        },
+        {
+            path : "/blog/topic/:id" , 
+            element : (
+                <TopicDetails />
             )
-        }
+            
+        },
+        {
+            path : "/blog/topic/:topicId/:blogId" ,
+            element : (
+                <BlogDetail />
+            )
+        },
+
     ],
 },
 ])
