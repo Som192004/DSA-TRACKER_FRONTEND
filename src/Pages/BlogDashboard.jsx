@@ -147,6 +147,7 @@ export default function BlogCards() {
                 <Edit className="dark:text-white w-5 h-5" />
               </button>
               }
+              
               {
                 role === 'Admin' && <button onClick={() => handleDelete(topic._id)} className="absolute top-3 right-3 bg-red-500 p-2 rounded-full hover:bg-red-600">
                 <Trash2 className="dark:text-white w-5 h-5" />
