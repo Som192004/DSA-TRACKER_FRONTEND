@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Plus, X, Trash2, Edit, Search } from "lucide-react";
+import FancyLoader from "../components/FancyLoader"
 
 export default function BlogCards() {
   const [topics, setTopics] = useState([]);
@@ -12,7 +13,7 @@ export default function BlogCards() {
   const [editMode, setEditMode] = useState(false);
   const [currentTopic, setCurrentTopic] = useState({ id: null, title: "", description: "" });
   const [accessToken, setAccessToken] = useState(localStorage.getItem("accessToken") || "");
-
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -21,15 +22,19 @@ export default function BlogCards() {
 
   // Fetch all blog topics
   useEffect(() => {
+    setLoading(true);
     axios
       .get("https://dsa-tracker-backend-oo1y.onrender.com/blog/get-all-blogs", {
         headers: { Authorization: `${accessToken}` },
       })
       .then((response) => {
+        setLoading(false);
         setTopics(response.data);
         setFilteredTopics(response.data); // Initialize filtered topics
       })
-      .catch((error) => console.error("Error fetching topics:", error));
+      .catch((error) => {
+        setLoading(false);
+        console.error("Error fetching topics:", error)});
   }, [accessToken]);
 
   // Handle search input
@@ -115,7 +120,8 @@ export default function BlogCards() {
     }
   };
 
-  return (
+  return <>{
+    loading ? <FancyLoader /> : 
     <div className="min-h-screen dark:bg-black dark:text-white p-6 ">
       {/* Search Bar */}
       <div className="flex justify-between items-center mb-6">
@@ -205,5 +211,5 @@ export default function BlogCards() {
         </div>
       )}
     </div>
-  );
+  }</>
 }
