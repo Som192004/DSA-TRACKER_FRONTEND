@@ -120,12 +120,105 @@ export default function BlogCards() {
     }
   };
 
-  return <>{
+  // return <>{
+  //   loading ? <FancyLoader /> : 
+  //   <div className="min-h-screen dark:bg-black dark:text-white p-6 ">
+  //     {/* Search Bar */}
+  //     <div className="flex justify-between items-center mb-6">
+  //       <div className="relative w-full max-w-md">
+  //         <Search className="absolute left-3 top-3 dark:text-white w-5 h-5" />
+  //         <input
+  //           type="text"
+  //           placeholder="Search topics..."
+  //           value={searchQuery}
+  //           onChange={handleSearch}
+  //           className="w-full pl-10 pr-3 py-2 rounded dark:bg-black dark:text-white border border-gray-700 focus:outline-none focus:ring focus:ring-blue-500"
+  //         />
+  //       </div>
+  //       {
+  //         role === 'Admin' && <button onClick={openAddModal} className="p-3 bg-blue-500 rounded-full hover:bg-blue-600 transition">
+  //         <Plus className="text-white w-6 h-6" />
+  //       </button>
+  //       }
+        
+  //     </div>
+
+  //     {/* Blog Topics */}
+  //     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+  //       {filteredTopics.length > 0 ? (
+  //         filteredTopics.map((topic) => (
+  //           <div key={topic._id} className="dark:bg-gray-800 p-5 rounded-xl shadow-md relative">
+  //             {
+  //               role === 'Admin' && <button onClick={() => openEditModal(topic)} className="absolute top-3 right-12 bg-yellow-500 p-2 rounded-full hover:bg-yellow-600">
+  //               <Edit className="dark:text-white w-5 h-5" />
+  //             </button>
+  //             }
+              
+  //             {
+  //               role === 'Admin' && <button onClick={() => handleDelete(topic._id)} className="absolute top-3 right-3 bg-red-500 p-2 rounded-full hover:bg-red-600">
+  //               <Trash2 className="dark:text-white w-5 h-5" />
+  //             </button>
+  //             }
+
+  //             <h2 className="text-xl font-semibold">{topic.title}</h2>
+  //             <p className="dark:text-white mt-2">{topic.description}</p>
+
+  //             {/* View All Button */}
+  //             <button
+  //               onClick={() => navigate(`/blog/topic/${topic._id}`)}
+  //               className="mt-3 dark:text-white hover:underline"
+  //             >
+  //               View All Blogs →
+  //             </button>
+  //           </div>
+  //         ))
+  //       ) : (
+  //         <p className="text-white text-center col-span-3">No topics found.</p>
+  //       )}
+  //     </div>
+
+  //     {/* Modal for Adding/Editing Blog Topic */}
+  //     {showModal && (
+  //       <div className="fixed inset-0 flex items-center justify-center bg-opacity-50 bg-gray-100">
+  //         <div className="dark:bg-gray-800 bg-gray-100 p-6 rounded-lg w-96">
+  //           <div className="flex justify-between items-center mb-4">
+  //             <h2 className="text-xl font-semibold">{editMode ? "Edit Blog Topic" : "Add New Blog Topic"}</h2>
+  //             <button onClick={() => setShowModal(false)}>
+  //               <X className="w-6 h-6 dark:text-white" />
+  //             </button>
+  //           </div>
+  //           <form onSubmit={handleSubmit}>
+  //             <input
+  //               type="text"
+  //               name="title"
+  //               placeholder="Title"
+  //               value={currentTopic.title}
+  //               onChange={handleChange}
+  //               className="w-full p-2 rounded bg-gray-700 text-white mb-3"
+  //             />
+  //             <textarea
+  //               name="description"
+  //               placeholder="Description"
+  //               value={currentTopic.description}
+  //               onChange={handleChange}
+  //               className="w-full p-2 rounded bg-gray-700 text-white mb-3"
+  //             ></textarea>
+  //             <button type="submit" className="w-full bg-blue-500 p-2 rounded hover:bg-blue-600">
+  //               {editMode ? "Update Topic" : "Add Topic"}
+  //             </button>
+  //           </form>
+  //         </div>
+  //       </div>
+  //     )}
+  //   </div>
+  // }</>
+  return <>
+  {
     loading ? <FancyLoader /> : 
-    <div className="min-h-screen dark:bg-black dark:text-white p-6 ">
+    <div className="min-h-screen dark:bg-black dark:text-white p-4 sm:p-6">
       {/* Search Bar */}
-      <div className="flex justify-between items-center mb-6">
-        <div className="relative w-full max-w-md">
+      <div className="flex flex-col sm:flex-row justify-between items-stretch sm:items-center gap-4 mb-6">
+        <div className="relative w-full">
           <Search className="absolute left-3 top-3 dark:text-white w-5 h-5" />
           <input
             type="text"
@@ -136,15 +229,15 @@ export default function BlogCards() {
           />
         </div>
         {
-          role === 'Admin' && <button onClick={openAddModal} className="p-3 bg-blue-500 rounded-full hover:bg-blue-600 transition">
-          <Plus className="text-white w-6 h-6" />
-        </button>
+          role === 'Admin' &&
+          <button onClick={openAddModal} className="self-end sm:self-auto p-3 bg-blue-500 rounded-full hover:bg-blue-600 transition">
+            <Plus className="text-white w-6 h-6" />
+          </button>
         }
-        
       </div>
 
       {/* Blog Topics */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {filteredTopics.length > 0 ? (
           filteredTopics.map((topic) => (
             <div key={topic._id} className="dark:bg-gray-800 p-5 rounded-xl shadow-md relative">
@@ -173,14 +266,14 @@ export default function BlogCards() {
             </div>
           ))
         ) : (
-          <p className="text-white text-center col-span-3">No topics found.</p>
+          <p className="text-white text-center col-span-full">No topics found.</p>
         )}
       </div>
 
       {/* Modal for Adding/Editing Blog Topic */}
       {showModal && (
-        <div className="fixed inset-0 flex items-center justify-center bg-opacity-50 bg-gray-100">
-          <div className="dark:bg-gray-800 bg-gray-100 p-6 rounded-lg w-96">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 px-4">
+          <div className="dark:bg-gray-800 bg-gray-100 p-6 rounded-lg w-full max-w-md mx-auto">
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-xl font-semibold">{editMode ? "Edit Blog Topic" : "Add New Blog Topic"}</h2>
               <button onClick={() => setShowModal(false)}>
@@ -211,5 +304,7 @@ export default function BlogCards() {
         </div>
       )}
     </div>
-  }</>
+  }
+</>
+
 }

@@ -102,89 +102,169 @@ export default function TopicDetails() {
   };
 
   return (
-    <div className="min-h-screen dark:bg-black dark:text-white p-6">
-      <button onClick={() => navigate("/blog")} className="mb-4 dark:text-white hover:underline">
-        ← Back to Topics
-      </button>
+//     <div className="min-h-screen dark:bg-black dark:text-white p-6">
+//       <button onClick={() => navigate("/blog")} className="mb-4 dark:text-white hover:underline">
+//         ← Back to Topics
+//       </button>
 
-      <div className="flex justify-between items-center mb-6">
-        <h1 className="text-3xl font-bold">{topic?.title || "Loading..."}</h1>
-        {
-          role === 'Admin' && <button onClick={openAddModal} className="p-3 bg-blue-500 rounded-full hover:bg-blue-600">
-          <Plus className="text-white w-6 h-6" />
-        </button>
-        }
+//       <div className="flex justify-between items-center mb-6">
+//         <h1 className="text-3xl font-bold">{topic?.title || "Loading..."}</h1>
+//         {
+//           role === 'Admin' && <button onClick={openAddModal} className="p-3 bg-blue-500 rounded-full hover:bg-blue-600">
+//           <Plus className="text-white w-6 h-6" />
+//         </button>
+//         }
         
+//       </div>
+
+//       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+//   {topic?.blogs?.map((blog) => (
+//     <div key={blog._id} className="dark:bg-gray-800 bg-white p-5 rounded-xl shadow-md relative h-30 overflow-hidden flex flex-col justify-between">
+//       {/* Edit and Delete Buttons */}
+//       {
+//         role === 'Admin' && <div>
+//         <button onClick={() => openEditModal(blog)} className="absolute top-3 right-12 bg-yellow-500 p-2 rounded-full hover:bg-yellow-600">
+//           <Edit className="text-white w-5 h-5" />
+//         </button>
+//         <button onClick={() => handleDelete(blog._id)} className="absolute top-3 right-3 bg-red-500 p-2 rounded-full hover:bg-red-600">
+//           <Trash2 className="text-white w-5 h-5" />
+//         </button>
+//         </div>
+//       }
+
+//       {/* Blog Name */}
+//       <h2 className="text-xl font-semibold">{blog.name || "Untitled Blog"}</h2>
+
+//       {/* Blog Content (Truncated) */}
+//       <p className="text-gray-400 mt-2 line-clamp-3">
+//         {blog.content.length > 100 ? blog.content.substring(0, 100) + "..." : blog.content}
+//       </p>
+
+//       {/* Read More Link */}
+//       <button
+//         onClick={() => navigate(`/blog/topic/${id}/${blog._id}`)}
+//         className="text-blue-400 hover:underline mt-2"
+//       >
+//         Read More →
+//       </button>
+//     </div>
+//   ))}
+// </div>
+
+
+//       {/* Modal for Adding/Editing Blog */}
+//       {showModal && (
+//         <div className="fixed inset-0 flex items-center justify-center bg-gray-100 bg-opacity-50">
+//           <div className="dark:bg-gray-800 bg-gray-100 p-6 rounded-lg w-96">
+//             <div className="flex justify-between items-center mb-4">
+//               <h2 className="text-xl font-semibold">{editMode ? "Edit Blog" : "Add New Blog"}</h2>
+//               <button onClick={() => setShowModal(false)}>
+//                 <X className="w-6 h-6 dark:text-white" />
+//               </button>
+//             </div>
+//             <form onSubmit={handleSubmit}>
+//               <input
+//                 type="text"
+//                 name="name"
+//                 placeholder="Blog Name"
+//                 value={currentBlog.name}
+//                 onChange={handleChange}
+//                 className="w-full p-2 rounded bg-gray-700 text-white mb-3"
+//               />
+//               <textarea
+//                 name="content"
+//                 placeholder="Content"
+//                 value={currentBlog.content}
+//                 onChange={handleChange}
+//                 className="w-full p-2 rounded bg-gray-700 text-white mb-3"
+//               ></textarea>
+//               <button type="submit" className="w-full bg-blue-500 p-2 rounded hover:bg-blue-600">
+//                 {editMode ? "Update Blog" : "Add Blog"}
+//               </button>
+//             </form>
+//           </div>
+//         </div>
+//       )}
+//     </div>
+
+// 👇 Only responsive classNames updated where needed (no logic change)
+<div className="min-h-screen dark:bg-black dark:text-white p-4 sm:p-6">
+  <button onClick={() => navigate("/blog")} className="mb-4 dark:text-white hover:underline text-sm sm:text-base">
+    ← Back to Topics
+  </button>
+
+  <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4">
+    <h1 className="text-2xl sm:text-3xl font-bold">{topic?.title || "Loading..."}</h1>
+    {
+      role === 'Admin' && (
+        <button onClick={openAddModal} className="p-2 sm:p-3 bg-blue-500 rounded-full hover:bg-blue-600">
+          <Plus className="text-white w-5 h-5 sm:w-6 sm:h-6" />
+        </button>
+      )
+    }
+  </div>
+
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+    {topic?.blogs?.map((blog) => (
+      <div key={blog._id} className="dark:bg-gray-800 bg-white p-4 sm:p-5 rounded-xl shadow-md relative flex flex-col justify-between">
+        {role === 'Admin' && (
+          <div>
+            <button onClick={() => openEditModal(blog)} className="absolute top-3 right-12 bg-yellow-500 p-2 rounded-full hover:bg-yellow-600">
+              <Edit className="text-white w-4 h-4 sm:w-5 sm:h-5" />
+            </button>
+            <button onClick={() => handleDelete(blog._id)} className="absolute top-3 right-3 bg-red-500 p-2 rounded-full hover:bg-red-600">
+              <Trash2 className="text-white w-4 h-4 sm:w-5 sm:h-5" />
+            </button>
+          </div>
+        )}
+        <h2 className="text-lg sm:text-xl font-semibold">{blog.name || "Untitled Blog"}</h2>
+        <p className="text-gray-400 mt-2 line-clamp-3 text-sm sm:text-base">
+          {blog.content.length > 100 ? blog.content.substring(0, 100) + "..." : blog.content}
+        </p>
+        <button
+          onClick={() => navigate(`/blog/topic/${id}/${blog._id}`)}
+          className="text-blue-400 hover:underline mt-2 text-sm sm:text-base"
+        >
+          Read More →
+        </button>
       </div>
+    ))}
+  </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-  {topic?.blogs?.map((blog) => (
-    <div key={blog._id} className="dark:bg-gray-800 bg-white p-5 rounded-xl shadow-md relative h-30 overflow-hidden flex flex-col justify-between">
-      {/* Edit and Delete Buttons */}
-      {
-        role === 'Admin' && <div>
-        <button onClick={() => openEditModal(blog)} className="absolute top-3 right-12 bg-yellow-500 p-2 rounded-full hover:bg-yellow-600">
-          <Edit className="text-white w-5 h-5" />
-        </button>
-        <button onClick={() => handleDelete(blog._id)} className="absolute top-3 right-3 bg-red-500 p-2 rounded-full hover:bg-red-600">
-          <Trash2 className="text-white w-5 h-5" />
-        </button>
+  {/* Modal */}
+  {showModal && (
+    <div className="fixed inset-0 flex items-center justify-center bg-gray-100 bg-opacity-50 px-4">
+      <div className="dark:bg-gray-800 bg-gray-100 p-4 sm:p-6 rounded-lg w-full max-w-md">
+        <div className="flex justify-between items-center mb-4">
+          <h2 className="text-lg sm:text-xl font-semibold">{editMode ? "Edit Blog" : "Add New Blog"}</h2>
+          <button onClick={() => setShowModal(false)}>
+            <X className="w-5 h-5 sm:w-6 sm:h-6 dark:text-white" />
+          </button>
         </div>
-      }
-
-      {/* Blog Name */}
-      <h2 className="text-xl font-semibold">{blog.name || "Untitled Blog"}</h2>
-
-      {/* Blog Content (Truncated) */}
-      <p className="text-gray-400 mt-2 line-clamp-3">
-        {blog.content.length > 100 ? blog.content.substring(0, 100) + "..." : blog.content}
-      </p>
-
-      {/* Read More Link */}
-      <button
-        onClick={() => navigate(`/blog/topic/${id}/${blog._id}`)}
-        className="text-blue-400 hover:underline mt-2"
-      >
-        Read More →
-      </button>
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            name="name"
+            placeholder="Blog Name"
+            value={currentBlog.name}
+            onChange={handleChange}
+            className="w-full p-2 rounded bg-gray-700 text-white mb-3 text-sm sm:text-base"
+          />
+          <textarea
+            name="content"
+            placeholder="Content"
+            value={currentBlog.content}
+            onChange={handleChange}
+            className="w-full p-2 rounded bg-gray-700 text-white mb-3 text-sm sm:text-base"
+          ></textarea>
+          <button type="submit" className="w-full bg-blue-500 p-2 rounded hover:bg-blue-600 text-sm sm:text-base">
+            {editMode ? "Update Blog" : "Add Blog"}
+          </button>
+        </form>
+      </div>
     </div>
-  ))}
+  )}
 </div>
 
-
-      {/* Modal for Adding/Editing Blog */}
-      {showModal && (
-        <div className="fixed inset-0 flex items-center justify-center bg-gray-100 bg-opacity-50">
-          <div className="dark:bg-gray-800 bg-gray-100 p-6 rounded-lg w-96">
-            <div className="flex justify-between items-center mb-4">
-              <h2 className="text-xl font-semibold">{editMode ? "Edit Blog" : "Add New Blog"}</h2>
-              <button onClick={() => setShowModal(false)}>
-                <X className="w-6 h-6 dark:text-white" />
-              </button>
-            </div>
-            <form onSubmit={handleSubmit}>
-              <input
-                type="text"
-                name="name"
-                placeholder="Blog Name"
-                value={currentBlog.name}
-                onChange={handleChange}
-                className="w-full p-2 rounded bg-gray-700 text-white mb-3"
-              />
-              <textarea
-                name="content"
-                placeholder="Content"
-                value={currentBlog.content}
-                onChange={handleChange}
-                className="w-full p-2 rounded bg-gray-700 text-white mb-3"
-              ></textarea>
-              <button type="submit" className="w-full bg-blue-500 p-2 rounded hover:bg-blue-600">
-                {editMode ? "Update Blog" : "Add Blog"}
-              </button>
-            </form>
-          </div>
-        </div>
-      )}
-    </div>
   );
 }
