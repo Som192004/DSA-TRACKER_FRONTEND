@@ -67,7 +67,7 @@ const ProblemPage = () => {
 
     // Responsive wrapper
     return (
-        <div className="w-full px-4 sm:px-6 md:px-8 lg:px-10">
+        <div className="w-full px-4 sm:px-6 md:px-8 lg:px-10 dark:bg-black">
             {
                 data && data.length === 0 ? (
                     <h1 className="text-center text-2xl sm:text-3xl dark:bg-black dark:text-white py-6">
