@@ -236,7 +236,7 @@ const Profile = () => {
             loading ? 
             <FancyLoader />
             : 
-            <div className="grid grid-cols-1 md:grid-cols-[30%_70%] gap-4 md:gap-2 h-fit p-2">
+            <div className="grid grid-cols-1 md:grid-cols-[30%_70%] gap-4 md:gap-2 h-fit p-2 dark:bg-black">
                 {/* User Info */}
                 <UserInfo data={data} />
 
