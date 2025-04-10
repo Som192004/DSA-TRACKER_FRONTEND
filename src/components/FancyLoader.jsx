@@ -88,7 +88,7 @@ const EduLoader = () => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900 px-4 sm:px-6 md:px-8">
+    <div className="flex flex-col items-center justify-center min-h-screen text-black dark:bg-gray-900 dark:text-white px-4 sm:px-6 md:px-8">
       <div className="text-center w-full max-w-md">
         <p
           className="text-xl sm:text-2xl md:text-3xl font-bold mb-4"
