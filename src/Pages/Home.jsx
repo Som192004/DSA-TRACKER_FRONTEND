@@ -88,7 +88,7 @@ import { useState } from "react";
 const faqs = [
   {
     question: "What is DSA Tracker?",
-    answer: "It's a platform to help you master Data Structures and Algorithms through structured learning paths."
+    answer: "It's a platform to help you master Data Structures and Algorithms ,the other core subjects as well as the projects development through structured learning paths."
   },
   {
     question: "Is the platform free to use?",
@@ -97,24 +97,31 @@ const faqs = [
   {
     question: "How do I start tracking my progress?",
     answer: "Simply sign up, choose a track, and mark topics as completed."
-  }
+  },
+  {
+    question: "Do you offer one to one mentorship?",
+    answer: "We currently don’t offer 1:1 mentorship. However, we do conduct group mentorship sessions where you can ask questions, share your concerns, and get guidance from mentors and peers in a collaborative environment."
+  },
 ];
 
 const mentors = [
   {
-    name: "Soham Patil",
-    title: "Software Engineer @ Google (Aspiring)",
-    img: "https://via.placeholder.com/100"
+    name: "Swapnil Badave",
+    title: "Specialist@Codeforces | 3*CodeChef",
+    img: "https://via.placeholder.com/100",
+    linkedIn: "",
   },
   {
-    name: "Aditi Sharma",
-    title: "DSA Mentor | Ex-Flipkart",
-    img: "https://via.placeholder.com/100"
+    name: "Rahul Kamble",
+    title: "600+@Leetcode | Mastercard Code for Change Hackathon",
+    img: "https://via.placeholder.com/100",
+    linkedIn: "",
   },
   {
-    name: "Rahul Mehra",
-    title: "Problem Solving Coach",
-    img: "https://via.placeholder.com/100"
+    name: "Shreyas Ghanekar",
+    title: "Passionate mentor dedicated to helping students build impactful real-world projects using modern tech stacks and solid DSA fundamentals.",
+    img: "https://via.placeholder.com/100",
+    linkedIn: "",
   }
 ];
 
@@ -181,15 +188,30 @@ const Home = () => {
           <h2 className="text-3xl font-bold text-center mb-10 text-gray-800 dark:text-white">Meet Our Mentors</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             {mentors.map((mentor, index) => (
-              <div key={index} className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 text-center">
-                <img
-                  src={mentor.img}
-                  alt={mentor.name}
-                  className="w-24 h-24 mx-auto rounded-full mb-4 object-cover"
-                />
-                <h3 className="text-xl font-semibold text-gray-800 dark:text-white">{mentor.name}</h3>
-                <p className="text-gray-600 dark:text-gray-300">{mentor.title}</p>
-              </div>
+              <div
+              key={index}
+              className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 text-center w-72"
+            >
+              <img
+                src={mentor.img}
+                alt={mentor.name}
+                className="w-24 h-24 mx-auto rounded-full mb-4 object-cover"
+              />
+              <h3 className="text-xl font-semibold text-gray-800 dark:text-white">
+                {mentor.name}
+              </h3>
+              <p className="text-gray-600 dark:text-gray-300">{mentor.title}</p>
+              <p className="text-gray-600 dark:text-gray-300 mt-2">
+                <a
+                  href={mentor.linkedIn}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-500 hover:underline"
+                >
+                  LinkedIn
+                </a>
+              </p>
+            </div>
             ))}
           </div>
         </Container>
