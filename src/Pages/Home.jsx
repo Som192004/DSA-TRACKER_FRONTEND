@@ -165,38 +165,44 @@ const Home = () => {
       
       {/* Mentors Section */}
       <section className="py-16 bg-gray-100 dark:bg-gray-800">
-        <Container>
-          <h2 className="text-3xl font-bold text-center mb-10 text-gray-800 dark:text-white">Meet Our Mentors</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 text-center">
-            {mentors.map((mentor, index) => (
-              <div
-              key={index}
-              className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 text-center w-72"
-            >
-              <img
-                src={mentor.img}
-                alt={mentor.name}
-                className="w-24 h-24 mx-auto rounded-full mb-4 object-cover"
-              />
-              <h3 className="text-xl font-semibold text-gray-800 dark:text-white">
-                {mentor.name}
-              </h3>
-              <p className="text-gray-600 dark:text-gray-300">{mentor.title}</p>
-              <p className="text-gray-600 dark:text-gray-300 mt-2">
-                <a
-                  href={mentor.linkedIn}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-500 hover:underline"
-                >
-                  LinkedIn
-                </a>
-              </p>
-            </div>
-            ))}
+  <Container>
+    <h2 className="text-3xl font-bold text-center mb-10 text-gray-800 dark:text-white">
+      Meet Our Mentors
+    </h2>
+
+    <div className="flex justify-center">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 text-center">
+        {mentors.map((mentor, index) => (
+          <div
+            key={index}
+            className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 text-center w-72 mx-auto"
+          >
+            <img
+              src={mentor.img}
+              alt={mentor.name}
+              className="w-24 h-24 mx-auto rounded-full mb-4 object-cover"
+            />
+            <h3 className="text-xl font-semibold text-gray-800 dark:text-white">
+              {mentor.name}
+            </h3>
+            <p className="text-gray-600 dark:text-gray-300">{mentor.title}</p>
+            <p className="text-gray-600 dark:text-gray-300 mt-2">
+              <a
+                href={mentor.linkedIn}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-500 hover:underline"
+              >
+                LinkedIn
+              </a>
+            </p>
           </div>
-        </Container>
-      </section>
+        ))}
+      </div>
+    </div>
+  </Container>
+</section>
+
 
       {/* FAQ Section */}
       <section className="py-16 bg-white dark:bg-gray-900">
