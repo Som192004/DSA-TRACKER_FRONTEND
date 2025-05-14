@@ -192,6 +192,7 @@ function Header() {
     { name: 'Signup', slug: '/signup', status: !authStatus },
     { name: 'Profile', slug: '/profile', status: authStatus },
     { name: 'Blog', slug: '/blog', status: true },
+    {name : "Courses", slug:'/courses', status:authStatus}
   ];
 
   useEffect(() => {

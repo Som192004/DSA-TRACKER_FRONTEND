@@ -162,31 +162,12 @@ const Home = () => {
           </div>
         </Container>
       </div>
-
-      {/* FAQ Section */}
-      <section className="py-16 bg-white dark:bg-gray-900">
-        <Container>
-          <h2 className="text-3xl font-bold text-center mb-10 text-gray-800 dark:text-white">Frequently Asked Questions</h2>
-          <div className="max-w-2xl mx-auto space-y-6">
-            {faqs.map((faq, index) => (
-              <div key={index} className="border rounded-lg p-4 shadow-sm">
-                <button onClick={() => toggleFAQ(index)} className="w-full text-left font-medium text-lg text-blue-600 dark:text-blue-400">
-                  {faq.question}
-                </button>
-                {openIndex === index && (
-                  <p className="mt-2 text-gray-700 dark:text-gray-300">{faq.answer}</p>
-                )}
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
-
+      
       {/* Mentors Section */}
       <section className="py-16 bg-gray-100 dark:bg-gray-800">
         <Container>
           <h2 className="text-3xl font-bold text-center mb-10 text-gray-800 dark:text-white">Meet Our Mentors</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 text-center">
             {mentors.map((mentor, index) => (
               <div
               key={index}
@@ -216,6 +197,28 @@ const Home = () => {
           </div>
         </Container>
       </section>
+
+      {/* FAQ Section */}
+      <section className="py-16 bg-white dark:bg-gray-900">
+        <Container>
+          <h2 className="text-3xl font-bold text-center mb-10 text-gray-800 dark:text-white">Frequently Asked Questions</h2>
+          <div className="max-w-2xl mx-auto space-y-6">
+            {faqs.map((faq, index) => (
+              <div key={index} className="border rounded-lg p-4 shadow-sm">
+                <button onClick={() => toggleFAQ(index)} className="w-full text-left font-medium text-lg text-blue-600 dark:text-blue-400">
+                  {faq.question}
+                </button>
+                {openIndex === index && (
+                  <p className="mt-2 text-gray-700 dark:text-gray-300">{faq.answer}</p>
+                )}
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      
+      
     </>
   );
 };
