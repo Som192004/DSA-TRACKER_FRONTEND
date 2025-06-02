@@ -47,10 +47,10 @@ const Profile = () => {
   ];
 
   const role = localStorage.getItem("role");
-
+  const {username} = useParams();
   useEffect(() => {
     setLoading(true);
-    const {username} = useParams();
+    
     const accessToken = localStorage.getItem("accessToken");
     axios
       .post(`https://dsa-tracker-backend-oo1y.onrender.com/users/get-user-profile/${username}`, {

@@ -97,14 +97,14 @@ const router = createBrowserRouter([
         {
             path: "/my-rank",
             element: (
-                <UserRankings />
+                <AuthLayout authentication={true}><UserRankings /></AuthLayout>
             )
         },
 
         {
             path : "/profile/:username",
             element: (
-                <UserProfile /> 
+                <AuthLayout authentication={true}><UserProfile /></AuthLayout>
             )
         }
 
