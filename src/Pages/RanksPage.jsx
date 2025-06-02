@@ -46,6 +46,7 @@ const UserRankings = () => {
           <thead className="bg-gray-200">
             <tr>
               <th className="px-4 py-2">Rank</th>
+              <th className="px-4 py-2">GfG Profile</th>
               <th className="px-4 py-2">Avatar</th>
               <th className="px-4 py-2">Full Name</th>
               <th className="px-4 py-2">Username</th>
@@ -59,6 +60,12 @@ const UserRankings = () => {
               <tr key={user.username} className="text-center hover:bg-gray-100 transition">
                 <td className="border px-4 py-2">{indexOfFirstUser + index + 1}</td>
 
+                <td className="border px-4 py-2">
+                <a href={`https://www.geeksforgeeks.org/user/${user.leetCodeId}/`} target="_blank" rel="noopener noreferrer">
+                  <img width="32" height="32" src="https://img.icons8.com/color/48/GeeksforGeeks.png" alt="GeeksforGeeks" />
+                </a>
+                </td>
+                
                 {/* Avatar clickable link */}
                 <td className="border px-4 py-2">
                   <Link to={`/profile/${user.username}`}>
