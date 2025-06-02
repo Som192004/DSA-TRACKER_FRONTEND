@@ -104,30 +104,30 @@ const faqs = [
   },
 ];
 
-// const mentors = [
-//   {
-//     name: "Swapnil Badave",
-//     title: "Specialist@Codeforces | 3*CodeChef",
-//     img: "https://via.placeholder.com/100",
-//     linkedIn: "",
-//   },
-//   {
-//     name: "Rahul Kamble",
-//     title: "600+@Leetcode | Mastercard Code for Change Hackathon",
-//     img: "https://via.placeholder.com/100",
-//     linkedIn: "",
-//   },
-//   {
-//     name: "Shreyas Ghanekar",
-//     title: "Passionate mentor dedicated to helping students build impactful real-world projects using modern tech stacks and solid DSA fundamentals.",
-//     img: "https://via.placeholder.com/100",
-//     linkedIn: "",
-//   }
-// ];
+const mentors = [
+  {
+    name: "Swapnil Badave",
+    title: "Specialist@Codeforces | 3*CodeChef",
+    img: "https://via.placeholder.com/100",
+    linkedIn: "",
+  },
+  {
+    name: "Rahul Kamble",
+    title: "600+@Leetcode | Mastercard Code for Change Hackathon",
+    img: "https://via.placeholder.com/100",
+    linkedIn: "",
+  },
+  {
+    name: "Shreyas Ghanekar",
+    title: "Passionate mentor dedicated to helping students build impactful real-world projects using modern tech stacks and solid DSA fundamentals.",
+    img: "https://via.placeholder.com/100",
+    linkedIn: "",
+  }
+];
 
 const Home = () => {
   const [openIndex, setOpenIndex] = useState(null);
-  const [mentors , setMentors] = useState([]);
+  // const [mentors , setMentors] = useState([]);
   const role = localStorage.getItem("role");
   const [accessToken, setAccessToken] = useState(localStorage.getItem("accessToken") || "");
 
@@ -140,14 +140,14 @@ const Home = () => {
     setAccessToken(localStorage.getItem("accessToken"));
   }, []);
 
-  useEffect(() => {
-    axios
-      .get(`https://dsa-tracker-backend-oo1y.onrender.com/mentor/get-all-mentors`)
-      .then((response) => {
-        setMentors(response.data);
-      })
-      .catch((error) => console.error("Error fetching blog:", error));
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get(`https://dsa-tracker-backend-oo1y.onrender.com/mentor/get-all-mentors`)
+  //     .then((response) => {
+  //       setMentors(response.data);
+  //     })
+  //     .catch((error) => console.error("Error fetching blog:", error));
+  // }, []);
 
   return (
     <>
