@@ -16,6 +16,9 @@ import AdminPanel from './Pages/AdminPanel'
 import BlogDashBoard from "./Pages/BlogDashboard"
 import TopicDetails from "./Pages/TopicDetails"
 import BlogDetail from './Pages/BlogDetail'
+import UserRankings from "./Pages/RanksPage"
+import UserProfile from "./components/UserProfile"
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -91,6 +94,19 @@ const router = createBrowserRouter([
                 <BlogDetail />
             )
         },
+        {
+            path: "/my-rank",
+            element: (
+                <UserRankings />
+            )
+        },
+
+        {
+            path : "/get-user-profile/:username",
+            element: (
+                <UserProfile /> 
+            )
+        }
 
     ],
 },
