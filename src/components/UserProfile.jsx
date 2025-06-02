@@ -79,7 +79,7 @@ const Profile = () => {
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-[30%_70%] gap-4 md:gap-2 h-fit p-2 dark:bg-black">
           {/* User Info */}
-          <UserInfo data={data} />
+          {/* <UserInfo data={data} /> */}
 
           {/* User Progress */}
           <div className="grid border-2 rounded-md p-2 dark:bg-black">
