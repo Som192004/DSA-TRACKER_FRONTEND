@@ -14,7 +14,7 @@ const UserRankings = () => {
       try {
         const accessToken = localStorage.getItem("accessToken");
         console.log(accessToken)
-        const res = await axios.get("https://dsa-tracker-backend-oo1y.onrender.com/users/get-rankings",  { Authorization: `${accessToken}` });
+        const res = await axios.post("https://dsa-tracker-backend-oo1y.onrender.com/users/get-rankings",  { Authorization: `${accessToken}` });
         setRankings(res.data);
       } catch (err) {
         console.error("Error fetching user rankings:", err);
