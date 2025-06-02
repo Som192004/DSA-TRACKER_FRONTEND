@@ -77,38 +77,40 @@ const Profile = () => {
       {loading ? (
         <FancyLoader />
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-[30%_70%] gap-4 md:gap-2 h-fit p-2 dark:bg-black">
-          {/* User Info */}
-          {/* <UserInfo data={data} /> */}
-
-          {/* User Progress */}
-          <div className="grid border-2 rounded-md p-2 dark:bg-black">
-            <div className="text-xl sm:text-2xl mb-1 dark:text-white mt-2 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-              <h1>Total Problems Solved: {data?.totalProblems}</h1>
-            </div>
-            <hr />
-            <div className="text-xl sm:text-2xl mt-2 dark:text-white">
-              <h1 className="mb-2">Topics Covered on (DSA TRACKER)</h1>
-              <div className="flex flex-wrap">
-                {dsaTopics?.map((dsaTopic) => (
-                  <div
-                    key={dsaTopic.id}
-                    className="p-2 w-full sm:w-1/2 lg:w-1/4 hover:scale-105 transition duration-300 cursor-pointer"
-                  >
-                    <DSACard
-                      name={dsaTopic.name}
-                      number={data?.result[dsaTopic.id]}
-                      msg={"Problems solved"}
-                    />
-                  </div>
-                ))}
+        <Container className="px-4 py-6">
+          <div className="grid grid-cols-1 md:grid-cols-[30%_70%] gap-4 h-fit">
+            {/* User Progress */}
+            <div className="border-2 rounded-lg p-4 dark:bg-black shadow-md">
+              <div className="text-xl sm:text-2xl mb-4 dark:text-white flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                <h1>Total Problems Solved: {data?.totalProblems}</h1>
+              </div>
+  
+              <hr className="border-gray-600 mb-4" />
+  
+              <div className="text-xl sm:text-2xl dark:text-white">
+                <h1 className="mb-4">Topics Covered on (DSA TRACKER)</h1>
+  
+                <div className="flex flex-wrap gap-4">
+                  {dsaTopics?.map((dsaTopic) => (
+                    <div
+                      key={dsaTopic.id}
+                      className="w-full sm:w-[48%] lg:w-[23%] transition-transform duration-300 hover:scale-105"
+                    >
+                      <DSACard
+                        name={dsaTopic.name}
+                        number={data?.result[dsaTopic.id]}
+                        msg={"Problems solved"}
+                      />
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </Container>
       )}
     </>
   );
-};
+  };
 
 export default Profile;
