@@ -12,7 +12,7 @@ const UserRankings = () => {
     const fetchRankings = async () => {
       
       try {
-        const res = await axios.get("https://dsa-tracker-backend-oo1y.onrender.com/users/get-rankings",  { Authorization: accessToken });
+        const res = await axios.get("https://dsa-tracker-backend-oo1y.onrender.com/users/get-rankings",  { Authorization: `${accessToken}` });
         setRankings(res.data);
       } catch (err) {
         console.error("Error fetching user rankings:", err);
@@ -53,7 +53,7 @@ const UserRankings = () => {
           </thead>
           <tbody>
             {currentUsers.map((user, index) => (
-              <tr key={user.userId} className="text-center hover:bg-gray-100 transition">
+              <tr key={user.username} className="text-center hover:bg-gray-100 transition">
                 <td className="border px-4 py-2">{indexOfFirstUser + index + 1}</td>
 
                 {/* Avatar clickable link */}
