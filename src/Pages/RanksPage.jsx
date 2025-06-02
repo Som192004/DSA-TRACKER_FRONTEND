@@ -6,11 +6,13 @@ const UserRankings = () => {
   const [rankings, setRankings] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const usersPerPage = 10;
+  const [accessToken, setAccessToken] = useState(localStorage.getItem("accessToken") || "");
 
   useEffect(() => {
     const fetchRankings = async () => {
+      
       try {
-        const res = await axios.get("https://dsa-tracker-backend-oo1y.onrender.com/users/get-rankings");
+        const res = await axios.get("https://dsa-tracker-backend-oo1y.onrender.com/users/get-rankings",  { Authorization: accessToken });
         setRankings(res.data);
       } catch (err) {
         console.error("Error fetching user rankings:", err);
@@ -56,7 +58,7 @@ const UserRankings = () => {
 
                 {/* Avatar clickable link */}
                 <td className="border px-4 py-2">
-                  <Link to={`/profile/${user.userId}`}>
+                  <Link to={`/profile/${user.username}`}>
                     <img
                       src={user.avatar || `https://api.dicebear.com/7.x/initials/svg?seed=${user.username}`}
                       alt="avatar"
