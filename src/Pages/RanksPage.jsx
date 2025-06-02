@@ -6,12 +6,13 @@ const UserRankings = () => {
   const [rankings, setRankings] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const usersPerPage = 10;
-  const [accessToken, setAccessToken] = useState(localStorage.getItem("accessToken") || "");
+  // const [accessToken, setAccessToken] = useState(localStorage.getItem("accessToken") || "");
 
   useEffect(() => {
     const fetchRankings = async () => {
       
       try {
+        const accessToken = localStorage.getItem("accessToken");
         const res = await axios.get("https://dsa-tracker-backend-oo1y.onrender.com/users/get-rankings",  { Authorization: `${accessToken}` });
         setRankings(res.data);
       } catch (err) {
