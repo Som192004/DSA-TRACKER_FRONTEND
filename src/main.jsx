@@ -19,6 +19,7 @@ import BlogDetail from './Pages/BlogDetail'
 import UserRankings from "./Pages/RanksPage"
 import UserProfile from "./components/UserProfile"
 import ContactUs from './Pages/ContactUs'
+import ComingSoon from "./components/ComingSoon"
 const router = createBrowserRouter([
   {
     path: "/",
@@ -111,6 +112,12 @@ const router = createBrowserRouter([
             path: "/contact-us",
             element: (
                 <ContactUs></ContactUs>
+            )
+        },
+        {
+            path: "/courses",
+            element: (
+                <ComingSoon></ComingSoon>
             )
         }
 
