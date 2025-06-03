@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const UserRankings = () => {
   const [rankings, setRankings] = useState([]);
-  const [loading, setLoading] = useState(true); // ✅ Loading state
+  const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const usersPerPage = 10;
 
@@ -12,9 +12,12 @@ const UserRankings = () => {
     const fetchRankings = async () => {
       try {
         const accessToken = localStorage.getItem("accessToken");
-        const res = await axios.post("https://dsa-tracker-backend-oo1y.onrender.com/users/get-rankings", {
-          Authorization: `${accessToken}`,
-        });
+        const res = await axios.post(
+          "https://dsa-tracker-backend-oo1y.onrender.com/users/get-rankings",
+          {
+            Authorization: `${accessToken}`,
+          }
+        );
         setRankings(res.data.data);
       } catch (err) {
         console.error("Error fetching user rankings:", err);
@@ -56,6 +59,7 @@ const UserRankings = () => {
           </div>
         ) : (
           <>
+            {/* Table wrapper scrolls horizontally on small screens */}
             <div className="overflow-x-auto">
               <table className="min-w-full border border-gray-300 text-sm sm:text-base dark:border-gray-700">
                 <thead className="bg-gray-200 dark:bg-gray-800 dark:text-white">
@@ -105,9 +109,15 @@ const UserRankings = () => {
                           />
                         </Link>
                       </td>
-                      <td className="border px-4 py-2 dark:border-gray-700 dark:text-white">{user.fullname}</td>
-                      <td className="border px-4 py-2 dark:border-gray-700 dark:text-white">@{user.username}</td>
-                      <td className="border px-4 py-2 dark:border-gray-700 dark:text-white">{user.collegeName}</td>
+                      <td className="border px-4 py-2 dark:border-gray-700 dark:text-white">
+                        {user.fullname}
+                      </td>
+                      <td className="border px-4 py-2 dark:border-gray-700 dark:text-white">
+                        @{user.username}
+                      </td>
+                      <td className="border px-4 py-2 dark:border-gray-700 dark:text-white">
+                        {user.collegeName}
+                      </td>
                       <td className="border px-4 py-2 dark:border-gray-700">
                         <a
                           href={`mailto:${user.email}`}

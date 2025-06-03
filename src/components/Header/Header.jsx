@@ -187,7 +187,7 @@ function Header() {
 
   const navItems = [
     { name: 'Home', slug: '/', status: true },
-    {name  : 'ContactUs', slug:'/contact-us', status:!authStatus},
+    {name  : 'ContactUs', slug:'/contact-us', status:true},
     { name: 'Problems', slug: '/problems', status: true },
     { name: 'Login', slug: '/login', status: !authStatus },
     { name: 'Signup', slug: '/signup', status: !authStatus },
