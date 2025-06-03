@@ -110,7 +110,7 @@ const router = createBrowserRouter([
         {
             path: "/contact-us",
             element: (
-                <AuthLayout authentication={false}><ContactUs></ContactUs></AuthLayout>
+                <ContactUs></ContactUs>
             )
         }
 

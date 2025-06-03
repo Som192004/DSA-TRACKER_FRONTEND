@@ -47,7 +47,10 @@ const Profile = () => {
         setLoading(false);
       })
       .catch((error) => {
-        console.error("Error fetching data:", error.response?.data || error.message);
+        console.error(
+          "Error fetching data:",
+          error.response?.data || error.message
+        );
         setLoading(false);
       });
   }, [username]);
@@ -57,40 +60,38 @@ const Profile = () => {
   }
 
   return (
-    <>
+    <div className="min-h-screen bg-white dark:bg-black transition-colors duration-300 px-4 py-6">
       {loading ? (
         <FancyLoader />
       ) : (
-        <Container className="px-4 py-6">
-          <div className="w-full max-w-6xl mx-auto space-y-6">
-            {/* Total Solved */}
-            <div className="text-center">
-              <h1 className="text-3xl font-bold dark:text-white">
-                Total Problems Solved: {data?.totalProblems || 0}
-              </h1>
-              <hr className="mt-2 border-gray-600 w-1/2 mx-auto" />
-            </div>
+        <Container className="w-full max-w-6xl mx-auto space-y-6">
+          {/* Total Solved */}
+          <div className="text-center">
+            <h1 className="text-3xl font-bold text-black dark:text-white">
+              Total Problems Solved: {data?.totalProblems || 0}
+            </h1>
+            <hr className="mt-2 border-gray-600 dark:border-gray-400 w-1/2 mx-auto" />
+          </div>
 
-            {/* DSA Topics */}
-            <div>
-              <h2 className="text-xl font-semibold mb-4 dark:text-white">
-                Topics Covered on (DSA TRACKER)
-              </h2>
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-                {dsaTopics.map((topicName, index) => (
-                  <DSACard
-                    key={index}
-                    name={topicName}
-                    number={data?.result?.[index] || 0}
-                    msg="Problems solved"
-                  />
-                ))}
-              </div>
+          {/* DSA Topics */}
+          <div>
+            <h2 className="text-xl font-semibold mb-4 text-black dark:text-white">
+              Topics Covered on (DSA TRACKER)
+            </h2>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+              {dsaTopics.map((topicName, index) => (
+                <DSACard
+                  key={index}
+                  name={topicName}
+                  number={data?.result?.[index] || 0}
+                  msg="Problems solved"
+                />
+              ))}
             </div>
           </div>
         </Container>
       )}
-    </>
+    </div>
   );
 };
 
