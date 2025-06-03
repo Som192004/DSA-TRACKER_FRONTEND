@@ -18,7 +18,7 @@ import TopicDetails from "./Pages/TopicDetails"
 import BlogDetail from './Pages/BlogDetail'
 import UserRankings from "./Pages/RanksPage"
 import UserProfile from "./components/UserProfile"
-
+import ContactUs from './Pages/ContactUs'
 const router = createBrowserRouter([
   {
     path: "/",
@@ -105,6 +105,12 @@ const router = createBrowserRouter([
             path : "/profile/:username",
             element: (
                 <AuthLayout authentication={true}><UserProfile /></AuthLayout>
+            )
+        },
+        {
+            path: "/contact-us",
+            element: (
+                <AuthLayout authentication={false}><ContactUs></ContactUs></AuthLayout>
             )
         }
 

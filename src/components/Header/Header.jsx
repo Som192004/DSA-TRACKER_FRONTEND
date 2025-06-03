@@ -187,12 +187,14 @@ function Header() {
 
   const navItems = [
     { name: 'Home', slug: '/', status: true },
+    {name  : 'ContactUs', slug:'/contact-us', status:!authStatus},
     { name: 'Problems', slug: '/problems', status: true },
     { name: 'Login', slug: '/login', status: !authStatus },
     { name: 'Signup', slug: '/signup', status: !authStatus },
     { name: 'Profile', slug: '/profile', status: authStatus },
     { name: 'Blog', slug: '/blog', status: true },
-    {name : "Courses", slug:'/courses', status:authStatus}
+    {name : "Courses", slug:'/courses', status:authStatus},
+    {name : "Rank", slug:"/my-rank", status:authStatus},
   ];
 
   useEffect(() => {

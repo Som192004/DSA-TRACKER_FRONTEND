@@ -63,7 +63,7 @@ const UserRankings = () => {
                 key={user.username}
                 className="text-center hover:bg-gray-100 dark:hover:bg-gray-700 transition"
               >
-                <td className="border px-4 py-2 dark:border-gray-700">
+                <td className="border px-4 py-2 dark:border-gray-700 dark:text-white">
                   {indexOfFirstUser + index + 1}
                 </td>
                 <td className="border px-4 py-2 dark:border-gray-700">
