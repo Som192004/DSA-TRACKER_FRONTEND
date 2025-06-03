@@ -2,42 +2,44 @@ import React from 'react';
 
 const ContactUs = () => {
   return (
-    <div className="min-h-screen bg-gray-50 py-10 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-lg p-6 sm:p-10">
-        <h2 className="text-2xl sm:text-3xl font-bold text-center text-gray-800 mb-6">Contact Us</h2>
+    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 py-10 px-4 sm:px-6 lg:px-8 text-gray-800 dark:text-gray-100 flex items-center justify-center">
+      <div className="w-full max-w-4xl bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 sm:p-10">
+        <h2 className="text-2xl sm:text-3xl font-bold text-center mb-6">
+          Contact Us
+        </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Contact Form */}
           <form className="space-y-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700">Name</label>
+              <label className="block text-sm font-medium">Name</label>
               <input
                 type="text"
-                className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full mt-1 px-4 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="Your Name"
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700">Email</label>
+              <label className="block text-sm font-medium">Email</label>
               <input
                 type="email"
-                className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full mt-1 px-4 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="Your Email"
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700">Subject</label>
+              <label className="block text-sm font-medium">Subject</label>
               <input
                 type="text"
-                className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full mt-1 px-4 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="Subject"
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700">Message</label>
+              <label className="block text-sm font-medium">Message</label>
               <textarea
                 rows="4"
-                className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full mt-1 px-4 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="Your Message"
               ></textarea>
             </div>
@@ -50,7 +52,7 @@ const ContactUs = () => {
           </form>
 
           {/* Contact Info */}
-          <div className="space-y-4 text-gray-700">
+          <div className="space-y-4">
             <div>
               <h3 className="text-lg font-semibold mb-1">📍 Our Address</h3>
               <p>DSA Tracker Pvt. Ltd.</p>
