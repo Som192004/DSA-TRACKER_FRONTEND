@@ -108,19 +108,19 @@ const mentors = [
   {
     name: "Swapnil Badave",
     title: "Specialist@Codeforces | 3*CodeChef",
-    img: "https://via.placeholder.com/100",
+    img: "../assets/Screenshot (216).png",
     linkedIn: "",
   },
   {
     name: "Rahul Kamble",
     title: "600+@Leetcode | Mastercard Code for Change Hackathon",
-    img: "https://via.placeholder.com/100",
+    img: "",
     linkedIn: "",
   },
   {
     name: "Shreyas Ghanekar",
     title: "Passionate mentor dedicated to helping students build impactful real-world projects using modern tech stacks and solid DSA fundamentals.",
-    img: "https://via.placeholder.com/100",
+    img: "../assets/Screenshot (224).png",
     linkedIn: "",
   }
 ];
