@@ -108,7 +108,7 @@ const mentors = [
   {
     name: "Swapnil Badave",
     title: "Specialist@Codeforces | 3*CodeChef",
-    img: "../assets/Swap.png",
+    img: "https://fra.cloud.appwrite.io/v1/storage/buckets/676590df00321eb55c08/files/6840711600071f734e11/view?project=67658dc4000374a2bd2a&mode=admin",
     linkedIn: "",
   },
   {
@@ -119,8 +119,8 @@ const mentors = [
   },
   {
     name: "Shreyas Ghanekar",
-    title: "Passionate mentor dedicated to helping students build impactful real-world projects using modern tech stacks and solid DSA fundamentals.",
-    img: "../assets/Shreyas.png",
+    title: "FullStack Developer | Ex Intern @Borgave Groups",
+    img: "https://fra.cloud.appwrite.io/v1/storage/buckets/676590df00321eb55c08/files/68407109003ab40f381e/view?project=67658dc4000374a2bd2a&mode=admin",
     linkedIn: "",
   }
 ];
