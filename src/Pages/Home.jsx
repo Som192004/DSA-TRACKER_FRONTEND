@@ -164,9 +164,9 @@ const Home = () => {
           <div className="text-center px-4 sm:px-6">
             <TypeAnimation
               sequence={[
-                "Track, Learn, and Ace DSA!",
+                "Track Your Preparation, Learn, and Ace Placement!",
                 2000,
-                "The Ultimate DSA Prep Tool.",
+                "The Ultimate Placement Prep Tool.",
                 2000,
                 "DSA TRACKER",
                 3000
