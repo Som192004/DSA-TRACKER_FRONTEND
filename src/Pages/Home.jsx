@@ -108,7 +108,7 @@ const mentors = [
   {
     name: "Swapnil Badave",
     title: "Specialist@Codeforces | 3*CodeChef",
-    img: "../assets/Screenshot (216).png",
+    img: "../assets/Swap.png",
     linkedIn: "",
   },
   {
@@ -120,7 +120,7 @@ const mentors = [
   {
     name: "Shreyas Ghanekar",
     title: "Passionate mentor dedicated to helping students build impactful real-world projects using modern tech stacks and solid DSA fundamentals.",
-    img: "../assets/Screenshot (224).png",
+    img: "../assets/Shreyas.png",
     linkedIn: "",
   }
 ];
