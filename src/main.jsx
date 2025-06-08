@@ -20,6 +20,10 @@ import UserRankings from "./Pages/RanksPage"
 import UserProfile from "./components/UserProfile"
 import ContactUs from './Pages/ContactUs'
 import ComingSoon from "./components/ComingSoon"
+import CoursePage from "./Pages/CoursePage"
+import CoursesPage from "./Pages/CoursesPage"
+import AdCourse from "./Pages/AdCourse"
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -62,10 +66,26 @@ const router = createBrowserRouter([
             )
         },
         {
+            path:"/videos",
+            element:(
+                <AuthLayout authentication={true}>
+                    <CoursesPage />
+                </AuthLayout>
+            )
+        },
+        {
             path:"/problems/:topic",
             element:(
                 <AuthLayout authentication={true}>
                     <ProblemPage />
+                </AuthLayout>
+            )
+        },
+        {
+            path:"/videos/:course",
+            element:(
+                <AuthLayout authentication={true}>
+                    <CoursePage />
                 </AuthLayout>
             )
         },
@@ -75,6 +95,14 @@ const router = createBrowserRouter([
                 <AuthLayout authentication={true}>
                     <AdminPanel />
                 </AuthLayout>)
+        },
+        {
+            path:"/ad-course",
+            element: (
+                <AuthLayout authentication={true}>
+                    <AdCourse />
+                </AuthLayout>
+            )
         },
         {
             path : "/blog" ,
@@ -115,7 +143,7 @@ const router = createBrowserRouter([
             )
         },
         {
-            path: "/courses",
+            path: "/Contest",
             element: (
                 <ComingSoon></ComingSoon>
             )
