@@ -14,6 +14,7 @@ import TopicList from "./TopicList"
 import AdminTopicList from "./AdminTopicList"
 import FancyLoader from "./FancyLoader"
 import CourseList from "./CourseList"
+import AdCourseList from "./AdCourseList"
 export {
     Protected,
     Header,
@@ -30,5 +31,6 @@ export {
     TopicList,
     AdminTopicList,
     FancyLoader,
-    CourseList
+    CourseList,
+    AdCourseList
 }
