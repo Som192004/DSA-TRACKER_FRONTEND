@@ -66,7 +66,7 @@ const router = createBrowserRouter([
             )
         },
         {
-            path:"/videos",
+            path:"/courses",
             element:(
                 <AuthLayout authentication={true}>
                     <CoursesPage />
