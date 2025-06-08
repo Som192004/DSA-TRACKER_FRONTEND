@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { AdminTopicList, Button, Input } from "../components/index.js";
+import { AdCourseList, Button, Input } from "../components/index.js";
 import axios from "axios";
 import UnAuthorized from "./UnAuthorized.jsx";
 
@@ -91,7 +91,7 @@ const AdCourse = () => {
 
           <div className="space-y-4">
             {allCoursesVideos?.map((courseVideo) => (
-              <AdminTopicList
+              <AdCourseList
                 name={courseVideo.name}
                 videos={courseVideo.problems}
                 key={courseVideo.name}
