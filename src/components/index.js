@@ -13,6 +13,7 @@ import DSACard from "./DSACard"
 import TopicList from "./TopicList"
 import AdminTopicList from "./AdminTopicList"
 import FancyLoader from "./FancyLoader"
+import CourseList from "./CourseList"
 export {
     Protected,
     Header,
@@ -28,5 +29,6 @@ export {
     DSACard,
     TopicList,
     AdminTopicList,
-    FancyLoader
+    FancyLoader,
+    CourseList
 }
