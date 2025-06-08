@@ -311,6 +311,7 @@ function Header() {
     { name: 'Blog', slug: '/blog', status: true },
     { name: 'Courses', slug: '/courses', status: authStatus },
     { name: 'Rank', slug: '/my-rank', status: authStatus },
+    {name : "Contest", slug:'/contest', status:true},
   ];
 
   useEffect(() => {

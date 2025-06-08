@@ -143,7 +143,7 @@ const router = createBrowserRouter([
             )
         },
         {
-            path: "/Contest",
+            path: "/contest",
             element: (
                 <ComingSoon></ComingSoon>
             )
