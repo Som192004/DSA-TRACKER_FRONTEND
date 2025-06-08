@@ -7,13 +7,13 @@ import UnAuthorized from "./UnAuthorized";
 import { FancyLoader } from "../components/index.js";
 
 const VideosPage = () => {
-  const videCourses = [
+  const courses = [
     { id: 0, name: "DBMS", number: 0 },
     { id: 1, name: "Operating System", number: 0 },
     { id: 2, name: "Compter Networks", number: 0 },
   ];
 
-  const [data, setData] = useState(videCourses);
+  const [data, setData] = useState(courses);
   const accessToken = localStorage.getItem("accessToken");
   const role = localStorage.getItem("role");
   const [loading, setLoading] = useState(true);
@@ -21,7 +21,7 @@ const VideosPage = () => {
   useEffect(() => {
     axios
       .post("https://dsa-tracker-backend-oo1y.onrender.com/videos/video-numbers", {
-        videCourses,
+        courses,
         Authorization: accessToken
       })
       .then((response) => {
