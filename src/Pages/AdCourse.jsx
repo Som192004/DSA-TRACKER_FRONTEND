@@ -27,13 +27,13 @@ const AdCourse = () => {
       }, 3000);
     } else {
       axios
-        .post("https://dsa-tracker-backend-oo1y.onrender.com/course/add-course", {
+        .post("https://dsa-tracker-backend-oo1y.onrender.com/courses/add-course", {
           Authorization: accessToken,
           courseName: currCourse,
         })
         .then((response) => {
           console.log("response-data: ", response.data.data);
-          setallTopicsProblems([...allCoursesVideos, response.data.data]);
+          setallCoursesVideos([...allCoursesVideos, response.data.data]);
           setMsg("course added successfully");
           setMsgOnBtn("Add New Course");
           setTimeout(() => {
