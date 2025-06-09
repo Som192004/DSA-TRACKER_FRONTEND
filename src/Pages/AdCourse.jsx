@@ -4,7 +4,7 @@ import axios from "axios";
 import UnAuthorized from "./UnAuthorized.jsx";
 
 const AdCourse = () => {
-  const [allCoursesVideos, setallCoursesVideos] = useState();
+  const [allCoursesVideos, setallCoursesVideos] = useState([]);
   const role = localStorage.getItem("role");
   const accessToken = localStorage.getItem("accessToken");
   const [currCourse, setCurrCourse] = useState("");
@@ -93,7 +93,7 @@ const AdCourse = () => {
             {allCoursesVideos?.map((courseVideo) => (
               <AdCourseList
                 name={courseVideo.name}
-                videos={courseVideo.problems}
+                videos={courseVideo.videos}
                 key={courseVideo.name}
               />
             ))}
