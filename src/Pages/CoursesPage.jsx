@@ -11,6 +11,7 @@ const VideosPage = () => {
     { id: 0, name: "DBMS", number: 0 },
     { id: 1, name: "Operating System", number: 0 },
     { id: 2, name: "Compter Networks", number: 0 },
+    {id : 3 , name : "OOP", number: 0}
   ];
 
   const [data, setData] = useState(courses);
