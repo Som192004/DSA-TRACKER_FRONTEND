@@ -27,7 +27,7 @@ const CourseList = ({ data }) => {
         const videoId = editingVideoId;
         axios
             .patch(`https://dsa-tracker-backend-oo1y.onrender.com/courseprogress/update-courseprogress/${videoId}`, {
-                editedProblem,
+                editedVideo,
                 Authorization: accessToken,
             })
             .then((response) => {
