@@ -148,7 +148,7 @@ const CourseList = ({ data }) => {
                                     </td>
                                     <td className="border-2 border-black dark:border-white dark:text-white px-2 py-1 text-center">
                                         <a href={videoData?.videoDetails?.link} target="_blank" rel="noopener noreferrer">
-                                            <img width="32" height="32" src="https://img.icons8.com/color/48/GeeksforGeeks.png" alt="GeeksforGeeks" />
+                                            <img width="32" height="32" src="https://imgs.search.brave.com/SrwvYwtV82drp0cGJJc4WBFiwV8j9hA7ecboSX1eUEE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMtMDAuaWNvbmR1/Y2suY29tL2Fzc2V0/cy4wMC95b3V0dWJl/LWljb24tNTEyeDM2/NC1pcXMwMG1uZy5w/bmc" alt="YouTube" />
                                         </a>
                                     </td>
                                     <td className="border-2 border-black dark:border-white dark:text-white px-2 py-1 text-center">
