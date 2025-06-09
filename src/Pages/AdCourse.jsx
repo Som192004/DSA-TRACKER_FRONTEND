@@ -59,7 +59,7 @@ const AdCourse = () => {
       })
       .then((response) => {
         console.log("response-data: ", response.data.data);
-        setallTopicsProblems(response.data.data);
+        setallCoursesVideos(response.data.data);
       })
       .catch((error) => {
         console.error("Error fetching data:", error.response.data);
