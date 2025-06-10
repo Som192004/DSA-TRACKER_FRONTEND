@@ -23,7 +23,7 @@ import ComingSoon from "./components/ComingSoon"
 import CoursePage from "./Pages/CoursePage"
 import CoursesPage from "./Pages/CoursesPage"
 import AdCourse from "./Pages/AdCourse"
-
+import ComingSoon2 from './components/ComingSoon2'
 const router = createBrowserRouter([
   {
     path: "/",
@@ -69,7 +69,7 @@ const router = createBrowserRouter([
             path:"/courses",
             element:(
                 <AuthLayout authentication={true}>
-                    <CoursesPage />
+                    <ComingSoon />
                 </AuthLayout>
             )
         },
@@ -85,7 +85,7 @@ const router = createBrowserRouter([
             path:"/videos/:course",
             element:(
                 <AuthLayout authentication={true}>
-                    <CoursePage />
+                    <ComingSoon />
                 </AuthLayout>
             )
         },
@@ -145,7 +145,7 @@ const router = createBrowserRouter([
         {
             path: "/contest",
             element: (
-                <ComingSoon></ComingSoon>
+                <ComingSoon2></ComingSoon2>
             )
         }
 

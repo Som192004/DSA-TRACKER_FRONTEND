@@ -32,7 +32,7 @@ const DSACard = ({ name, number, msg }) => {
                     {/* <img src={appwriteService.getFilePreview(featuredImage)} alt={title}
                     className='rounded-xl' /> */}
                 </div>
-                <Link to={`/videos/${name}`}>
+                <Link to={`/problems/${name}`}>
                     <h2 className='text-xl font-bold'>{name}</h2>
                 </Link>
                 <p className="mt-1">{msg}: {number}</p>
