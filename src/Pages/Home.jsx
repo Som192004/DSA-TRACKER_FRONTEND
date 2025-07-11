@@ -109,19 +109,19 @@ const mentors = [
     name: "Swapnil Badave",
     title: "Specialist@Codeforces | 3*CodeChef",
     img: "https://fra.cloud.appwrite.io/v1/storage/buckets/676590df00321eb55c08/files/6840711600071f734e11/view?project=67658dc4000374a2bd2a&mode=admin",
-    linkedIn: "",
+    linkedIn: "https://in.linkedin.com/in/swapnilbadave922003",
   },
   {
     name: "Rahul Kamble",
     title: "600+@Leetcode | Mastercard Code for Change Hackathon",
-    img: "",
-    linkedIn: "",
+    img: "https://fra.cloud.appwrite.io/v1/storage/buckets/676590df00321eb55c08/files/6870fd47002d853e6ad1/view?project=67658dc4000374a2bd2a&mode=admin",
+    linkedIn: "https://www.linkedin.com/in/rahul-kamble-a41691251",
   },
   {
     name: "Shreyas Ghanekar",
     title: "FullStack Developer | Ex Intern @Borgave Groups",
     img: "https://fra.cloud.appwrite.io/v1/storage/buckets/676590df00321eb55c08/files/68407109003ab40f381e/view?project=67658dc4000374a2bd2a&mode=admin",
-    linkedIn: "",
+    linkedIn: "https://in.linkedin.com/in/shreyash-ghanekar",
   }
 ];
 
