@@ -217,12 +217,12 @@ const Home = () => {
         ))}
       </div>
     </div>
-        {
+        {/* {
           role === 'Admin' &&
           <button onClick={openAddModal} className="self-end sm:self-auto p-3 bg-blue-500 rounded-full hover:bg-blue-600 transition">
             <Plus className="text-white w-6 h-6" />
           </button>
-        }
+        } */}
   </Container>
 </section>
 
