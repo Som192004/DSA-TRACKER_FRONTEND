@@ -3,7 +3,7 @@ const CACHE_NAME = "dsa-tracker-cache-v1";
 const urlsToCache = [
   "/",
   "/index.html",
-  "/manifest.json",
+  "/manifest.json", 
   "../src/assets/DSATracker.webp",
 ];
 
