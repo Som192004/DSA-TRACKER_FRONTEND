@@ -76,7 +76,9 @@ const AdminTopicList = ({name , problems}) => {
         const accessToken = localStorage.getItem("accessToken")
         axios
           .post("https://dsa-tracker-backend-oo1y.onrender.com/problems/add-problem" , {Authorization : accessToken , 
-        name : problemName , difficulty , topicName : name , link , problemNumber, videoSolution})
+        name : problemName , difficulty , topicName : name , link , problemNumber, videoSolution}, {headers: {
+          "Content-Type": "multipart/form-data",
+        }},)
           .then((response) => {
             console.log("response-data: " , response.data.data)
             setProblemList([...problems , response.data.data])
@@ -206,11 +208,11 @@ const AdminTopicList = ({name , problems}) => {
                                                 type="file"
                                                 value={editedProblem.videoSolution || ""}
                                                 onChange={(e) => handleInputChange(e, "videoSolution")}
-                                                className="border rounded px-2"
+                                                className="border rounded px-2 justify-self-center"
                                             />
                                         ) : (
-                                            <a href={problem.videoSolution} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
-                                                <FaVideo size="1.5em" />
+                                            <a href={problem.videoSolution} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline justify-self-center cursor-pointer">
+                                                <i class="fa-solid fa-play" style="color: #74C0FC;"></i>
                                             </a>
                                         )}
                                     </td>
@@ -249,7 +251,7 @@ const AdminTopicList = ({name , problems}) => {
                                         <td className="border-2 border-black dark:border-white dark:text-white">
                                             <Input 
                                                 type="file" 
-                                                onChange={(e) => setVideoSolution(e.target.files[0])} // Get the first selected file
+                                                onChange={(e) => setVideoSolution(e.target.files[0])} 
                                                 className="w-full"
                                             />
                                         </td>
