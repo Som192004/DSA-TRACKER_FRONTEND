@@ -2,11 +2,12 @@ import { useState } from "react";
 import Button from "./Header/Button";
 import axios from "axios";
 import Input from "./Input";
-import { FaEdit, FaSave, FaTimes ,FaTrash} from "react-icons/fa";
+import { FaEdit, FaSave, FaTimes ,FaTrash , FaVideo} from "react-icons/fa";
 const AdminTopicList = ({name , problems}) => {
     const [problemName , setProblemName] = useState() ;
     const [difficulty , setDifficulty] = useState() ;
     const [link , setLink] = useState() ;
+    const [videoSolution, setVideoSolution] = useState(null);
     const [problemNumber , setProblemNumber] = useState();
     const [showInput , setShowInput] = useState(false);
     const [msgOnBtn , setMsgOnBtn] = useState("Save");
@@ -65,11 +66,17 @@ const AdminTopicList = ({name , problems}) => {
             setMsgOnBtn("Save")
             return
         }
+        if(!videoSolution)
+        {
+            setMsg("All Fields are required");
+            setMsgOnBtn("Save");
+            return ;
+        }
         //temporary I am accessing the accessToken directly from the localStorage
         const accessToken = localStorage.getItem("accessToken")
         axios
           .post("https://dsa-tracker-backend-oo1y.onrender.com/problems/add-problem" , {Authorization : accessToken , 
-        name : problemName , difficulty , topicName : name , link , problemNumber})
+        name : problemName , difficulty , topicName : name , link , problemNumber, videoSolution})
           .then((response) => {
             console.log("response-data: " , response.data.data)
             setProblemList([...problems , response.data.data])
@@ -78,12 +85,14 @@ const AdminTopicList = ({name , problems}) => {
             setMsg("")
             setShowInput(!showInput)
             setMsgOnBtn("Save")
+            setVideoSolution(null); 
             
         })
           .catch((error) => {
             console.error("Error fetching data:", error.message)
             setMsg(error.message)
             setMsgOnBtn("Save")
+            setVideoSolution(null); 
         });
         
     }
@@ -128,6 +137,7 @@ const AdminTopicList = ({name , problems}) => {
                                     <th className="border-2 border-black dark:border-white dark:text-white">Difficulty</th>
                                     <th className="border-2 border-black dark:border-white dark:text-white">TopicName</th>
                                     <th className="border-2 border-black dark:border-white dark:text-white">Link</th>
+                                    <th className="border-2 border-black dark:border-white dark:text-white">Solution</th>
                                     <th className="border-2 border-black dark:border-white dark:text-white"><FaEdit size="2.0em" className="justify-self-center"/></th>
                                     <th className="border-2 border-black dark:border-white dark:text-white"><FaTrash size="1.8em" className="justify-self-center"/></th>
                                 </tr>
@@ -190,6 +200,20 @@ const AdminTopicList = ({name , problems}) => {
                                             problem.link
                                         )}
                                     </td>
+                                    <td className="border-2 border-black dark:border-white dark:text-white">
+                                        {editingProblemId === problem._id ? (
+                                            <Input 
+                                                type="file"
+                                                value={editedProblem.videoSolution || ""}
+                                                onChange={(e) => handleInputChange(e, "videoSolution")}
+                                                className="border rounded px-2"
+                                            />
+                                        ) : (
+                                            <a href={problem.videoSolution} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
+                                                <FaVideo size="1.5em" />
+                                            </a>
+                                        )}
+                                    </td>
 
                                     <td className="border-2 border-black dark:border-white dark:text-white">
                                         {editingProblemId === problem._id ? (
@@ -221,6 +245,13 @@ const AdminTopicList = ({name , problems}) => {
                                         </td>
                                         <td className="border-2 border-black dark:border-white dark:text-white">
                                             <Input type="text" onChange={(e) => setLink(e.target.value)} className="w-full"/>
+                                        </td>
+                                        <td className="border-2 border-black dark:border-white dark:text-white">
+                                            <Input 
+                                                type="file" 
+                                                onChange={(e) => setVideoSolution(e.target.files[0])} // Get the first selected file
+                                                className="w-full"
+                                            />
                                         </td>
                                         <td className="border-2 border-black dark:border-white dark:text-white justify-items-center">
                                             <Button onClick={() => cancel()} >Cancel</Button>
