@@ -94,7 +94,7 @@ const ContactUs = () => {
             <div>
               <h3 className="text-lg font-semibold mb-1">📍 Our Address</h3>
               <p>DSA Tracker Pvt. Ltd.</p>
-              <p>Trimurti Nagar Near PICT Pune, Pune, Maharashtra, India</p>
+              <p>Trimurti Nagar Near VIT Pune, Pune, Maharashtra, India</p>
             </div>
             <div>
               <h3 className="text-lg font-semibold mb-1">✉️ Email</h3>
