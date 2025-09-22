@@ -118,7 +118,7 @@ const mentors = [
     // linkedIn: "https://www.linkedin.com/in/rahul-kamble-a41691251",
   },
   {
-    name: "Shreyas Ghanekar",
+    name: "Bikramjeet Singh",
     title: "FullStack Developer | Ex Intern @Borgave Groups",
   //   img: "https://fra.cloud.appwrite.io/v1/storage/buckets/676590df00321eb55c08/files/68407109003ab40f381e/view?project=67658dc4000374a2bd2a&mode=admin",
     // linkedIn: "https://in.linkedin.com/in/shreyash-ghanekar",
