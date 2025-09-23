@@ -114,8 +114,8 @@ const mentors = [
   {
     name: "Prof. Asmita Patil",
     title: "Professor",
-    img: "https://fra.cloud.appwrite.io/v1/storage/buckets/676590df00321eb55c08/files/6870fd47002d853e6ad1/view?project=67658dc4000374a2bd2a&mode=admin",
-    linkedIn: "https://www.linkedin.com/in/rahul-kamble-a41691251",
+    // img: "https://fra.cloud.appwrite.io/v1/storage/buckets/676590df00321eb55c08/files/6870fd47002d853e6ad1/view?project=67658dc4000374a2bd2a&mode=admin",
+    // linkedIn: "https://www.linkedin.com/in/rahul-kamble-a41691251",
   },
   {
     name: "Sir Shreyas Ghanekar",
